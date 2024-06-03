@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS FoodItem;
+DROP TABLE IF EXISTS FoodCategory;
