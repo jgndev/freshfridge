@@ -50,7 +50,7 @@ FreshFridge is a home food tracking application designed to help you manage your
 1. **Log in**:
    Open your web browser and go to `http://localhost:8080`. Use the default credentials:
     - **Username**: `freshfridge`
-    - **Password**: `admin`
+    - **Password**: `supafresh`
 
 2. **Add food items**:
    Add fresh or frozen food items to your list, and set their categories. The application will automatically calculate their expiration dates based on the category settings.
