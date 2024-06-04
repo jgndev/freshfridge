@@ -206,8 +206,7 @@ INSERT INTO FoodItem (id, name, category_id, image_url) VALUES
     (uuid_generate_v4(), 'Clams', (SELECT id FROM FoodCategory WHERE name = 'Frozen Seafood'), NULL),
     (uuid_generate_v4(), 'Produce', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce'), NULL),
     (uuid_generate_v4(), 'Produce', (SELECT id FROM FoodCategory WHERE name = 'Frozen Produce'), NULL),
-    (uuid_generate_v4(), 'Cooked Food', (SELECT id FROM FoodCategory WHERE name = 'Fresh Cooked Food'), NULL),
-    (uuid_generate_v4(), 'Cooked Food', (SELECT id FROM FoodCategory WHERE name = 'Frozen Cooked Food'), NULL);
+    (uuid_generate_v4(), 'Cooked Food', (SELECT id FROM FoodCategory WHERE name = 'Cooked Food'), NULL);
 
 -- Initial insertion for the Users table
 INSERT INTO Users (id, username, password, email_address) VALUES

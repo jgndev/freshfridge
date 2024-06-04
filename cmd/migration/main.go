@@ -3,7 +3,6 @@ package main
 import (
     "errors"
     "flag"
-    "fmt"
     "github.com/golang-migrate/migrate/v4"
     _ "github.com/golang-migrate/migrate/v4/database/postgres"
     _ "github.com/golang-migrate/migrate/v4/source/file"
@@ -16,7 +15,7 @@ func main() {
     // Load environment variables
     err := godotenv.Load()
     if err != nil {
-        log.Fatalln("Environment could not be loaded.")
+        log.Fatalln("Did not find a .env file with any variables set.")
     }
 
     // Commandline Flags
@@ -44,7 +43,7 @@ func main() {
         if err = m.Up(); err != nil && !errors.Is(err, migrate.ErrNoChange) {
             log.Fatalf("Failed to apply up migrations: %v", err)
         }
-        fmt.Println("Up migrations applied successfully")
+        log.Println("Up migrations applied successfully")
     } else if *down {
         if err = m.Down(); err != nil && !errors.Is(err, migrate.ErrNoChange) {
             log.Fatalf("Failed to apply down migrations: %v", err)
