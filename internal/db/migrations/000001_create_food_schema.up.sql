@@ -24,7 +24,7 @@ CREATE TABLE FoodItem (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID REFERENCES Users(id),
     name VARCHAR(255) NOT NULL,
-    quantity INT DEFAULT 1,
+    quantity INT DEFAULT 1 NOT NULL,
     image_url VARCHAR(255) NULL,
     category_id UUID REFERENCES FoodCategory(id),
     date_added TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
