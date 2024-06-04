@@ -81,10 +81,11 @@ INSERT INTO FoodCategory (id, name, days_use_by, days_warning, days_expired) VAL
     (uuid_generate_v4(), 'Frozen Pork', 120, 180, 270),
     (uuid_generate_v4(), 'Frozen Chicken', 120, 180, 270),
     (uuid_generate_v4(), 'Frozen Fish', 90, 120, 180),
-    (uuid_generate_v4(), 'Cooked Food', 3, 5, 7);
+    (uuid_generate_v4(), 'Cooked Food', 3, 4, 7);
 
 -- Initial insertion for the Users table
 INSERT INTO Users (id, username, password, email_address) VALUES
+    (uuid_generate_v4(), 'freshdemo', '$2b$12$QKzZeq2spJiFO/VC.O0rTubXfYq9OfmnAumWFRCPi19.d7/mKDe6C', 'user@domain.com'),
     (uuid_generate_v4(), 'freshfridge', '$2b$12$mN6s.kY/npH/Uf7F2Wr4rONkCV5UoXHMcp3r3HarPAx0KYr48y8Zq', 'user@domain.com');
 
 -- Initial insertion for common grocery list items in the FoodItem table
