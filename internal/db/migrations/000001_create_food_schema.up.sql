@@ -1,6 +1,15 @@
 -- Enable uuid-ossp extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
+-- Users Table
+CREATE TABLE Users (
+   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+   username VARCHAR(255) NOT NULL UNIQUE,
+   password VARCHAR(255) NOT NULL,
+   email_address VARCHAR(255) NOT NULL UNIQUE,
+   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 -- FoodCategory Table
 CREATE TABLE FoodCategory (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -15,9 +24,10 @@ CREATE TABLE FoodItem (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID REFERENCES Users(id),
     name VARCHAR(255) NOT NULL,
-    image_url VARCHAR(255),
+    quantity INT DEFAULT 1,
+    image_url VARCHAR(255) NULL,
     category_id UUID REFERENCES FoodCategory(id),
-    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    date_added TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL,
     date_use_by TIMESTAMP,
     date_warning TIMESTAMP,
     date_expired TIMESTAMP,
@@ -26,21 +36,12 @@ CREATE TABLE FoodItem (
     notification_trash_sent BOOLEAN DEFAULT FALSE
 );
 
--- Users Table
-CREATE TABLE Users (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    email_address VARCHAR(255) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-);
-
 -- SmsRecipients Table
 CREATE TABLE SmsRecipients (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID REFERENCES Users(id),
     phone_number VARCHAR(20) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
 -- EmailRecipients Table
@@ -48,7 +49,7 @@ CREATE TABLE EmailRecipients (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID REFERENCES Users(id),
     email_address VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
 -- Trigger Functions
