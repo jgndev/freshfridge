@@ -140,4 +140,15 @@ INSERT INTO FoodItem(id, user_id, name, category_id) VALUES
     (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Catfish', (SELECT id FROM FoodCategory WHERE name = 'Frozen Seafood')),
     (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Crappie', (SELECT id FROM FoodCategory WHERE name = 'Fresh Seafood')),
     (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Crappie', (SELECT id FROM FoodCategory WHERE name = 'Frozen Seafood')),
-    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Shrimp', (SELECT id FROM FoodCategory WHERE name = 'Frozen Seafood'));
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Shrimp', (SELECT id FROM FoodCategory WHERE name = 'Frozen Seafood')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Lettuce', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Tomatoes', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Cucumbers', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Bell Peppers', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Carrots', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Broccoli', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Asparagus', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Zucchini', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Brussels Sprouts', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Green Beans', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce')),
+    (uuid_generate_v4(), (SELECT id FROM Users WHERE username = 'freshfridge'), 'Peas', (SELECT id FROM FoodCategory WHERE name = 'Fresh Produce'));
