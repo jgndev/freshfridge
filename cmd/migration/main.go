@@ -5,6 +5,8 @@ import (
     "flag"
     "fmt"
     "github.com/golang-migrate/migrate/v4"
+    _ "github.com/golang-migrate/migrate/v4/database/postgres"
+    _ "github.com/golang-migrate/migrate/v4/source/file"
     "github.com/joho/godotenv"
     "log"
     "os"
@@ -32,7 +34,7 @@ func main() {
     }
 
     // Initialize the migrate instance
-    m, err := migrate.New("file://db/migrations", dbURL)
+    m, err := migrate.New("file://internal/db/migrations", dbURL)
     if err != nil {
         log.Fatalf("Failed to initialize migrate instance: %v", err)
     }
