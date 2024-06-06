@@ -210,7 +210,7 @@ INSERT INTO FoodItem (id, name, category_id, image_url) VALUES
 
 -- Initial insertion for the Users table
 INSERT INTO Users (id, username, password, email_address) VALUES
-    -- username: freshdemo, password: freshdemo, email: freshdemo@freshfridge.com
+    -- username: freshdemo, password: freshdemo, email: freshdemo@freshfridge.app
     (uuid_generate_v4(), 'freshdemo', '$2b$12$QKzZeq2spJiFO/VC.O0rTubXfYq9OfmnAumWFRCPi19.d7/mKDe6C', 'freshdemo@freshfridge.app'),
-    -- username: freshfridge, password: supafresh, email: freshfridge@freshfridge.com
+    -- username: freshfridge, password: supafresh, email: freshfridge@freshfridge.app
     (uuid_generate_v4(), 'freshfridge', '$2b$12$mN6s.kY/npH/Uf7F2Wr4rONkCV5UoXHMcp3r3HarPAx0KYr48y8Zq', 'freshfridge@freshfridge.app');
